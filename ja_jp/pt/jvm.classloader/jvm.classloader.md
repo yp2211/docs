@@ -1,7 +1,7 @@
-# JDKソースコードレベルからのJVMクラスロードメカニズムの徹底的な分析
+# JDKソースコードレベルからのJVMクラスロードモデルの徹底解説
 ## クラスのロードと実行のプロセス全体
 
-javaコマンドを使用して特定のクラスのメイン関数を実行してプログラムを開始する場合、最初にクラスローダーを介してメインクラスをJVMにロードする必要があります。
+javaコマンドを使用して特定のクラスのmain関数を実行してプログラムを開始する場合、最初にクラスローダーを介してメインクラスをJVMにロードする必要があります。
 
 ```java:Math.java
 package com.rocdocs.jvm;
@@ -158,20 +158,20 @@ the extClassloader : sun.misc.Launcher$ExtClassLoader@3764951d
 the appClassLoader : sun.misc.Launcher$AppClassLoader@14dad5dc
 
 bootstrapLoaderは下記のファイルをロード：
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/resources.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/rt.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/sunrsasign.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/jsse.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/jce.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/charsets.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/lib/jfr.jar
-file:/D:/dev/Java/jdk1.8.0_45/jre/classes
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/resources.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/rt.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/sunrsasign.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/jsse.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/jce.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/charsets.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/lib/jfr.jar
+file:/c:/workspace/java/jdk1.8.0_45/jre/classes
 
 extClassloaderは下記のファイルをロード：
 c:\workspace\java\jdk1.8.0_45\jre\lib\ext;c:\java\lib\ext
 
 appClassLoaderは下記のファイルをロード：
-c:\workspace\java\jdk1.8.0_45\jre\lib\charsets.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\deploy.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\access-bridge-64.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\cldrdata.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\dnsns.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\jaccess.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\jfxrt.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\localedata.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\nashorn.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunec.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunjce_provider.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunmscapi.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunpkcs11.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\zipfs.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\javaws.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jce.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jfr.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jfxswt.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jsse.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\management-agent.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\plugin.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\resources.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\rt.jar;D:\ideaProjects\project-all\target\classes;C:\Users\zhuge\.m2\repository\org\apache\zookeeper\zookeeper\3.4.12\zookeeper-3.4.12.jar;C:\Users\zhuge\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\zhuge\.m2\repository\org\slf4j\slf4j-log4j12\1.7.25\slf4j-log4j12-1.7.25.jar;C:\Users\zhuge\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\zhuge\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\zhuge\.m2\repository\org\apache\yetus\audience-annotations\0.5.0\audience-annotations-0.5.0.jar;C:\Users\zhuge\.m2\repository\io\netty\netty\3.10.6.Final\netty-3.10.6.Final.jar;C:\Users\zhuge\.m2\repository\com\google\guava\guava\22.0\guava-22.0.jar;C:\Users\zhuge\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\zhuge\.m2\repository\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;C:\Users\zhuge\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\zhuge\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;D:\dev\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
+c:\workspace\java\jdk1.8.0_45\jre\lib\charsets.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\deploy.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\access-bridge-64.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\cldrdata.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\dnsns.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\jaccess.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\jfxrt.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\localedata.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\nashorn.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunec.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunjce_provider.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunmscapi.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\sunpkcs11.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\ext\zipfs.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\javaws.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jce.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jfr.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jfxswt.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\jsse.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\management-agent.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\plugin.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\resources.jar;c:\workspace\java\jdk1.8.0_45\jre\lib\rt.jar;c:\ideaProjects\project-all\target\classes;C:\Users\roc\.m2\repository\org\apache\zookeeper\zookeeper\3.4.12\zookeeper-3.4.12.jar;C:\Users\roc\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\roc\.m2\repository\org\slf4j\slf4j-log4j12\1.7.25\slf4j-log4j12-1.7.25.jar;C:\Users\roc\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\roc\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\roc\.m2\repository\org\apache\yetus\audience-annotations\0.5.0\audience-annotations-0.5.0.jar;C:\Users\roc\.m2\repository\io\netty\netty\3.10.6.Final\netty-3.10.6.Final.jar;C:\Users\roc\.m2\repository\com\google\guava\guava\22.0\guava-22.0.jar;C:\Users\roc\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\roc\.m2\repository\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;C:\Users\roc\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\roc\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;c:\dev\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
 
 ```
 
@@ -215,13 +215,13 @@ public Launcher() {
 
 ![](./img/jvm.classloader.3_ja_jp.png)
 
-実際には、クラスをロードするための親委任メカニズムがあります。特定のクラスをロードするとき、最初に親ローダーにターゲットクラスの検索を委託し、次に、上位の親ローダーが見つからない場合は読み込みを委託します。すべての親ローダーが独自のロードクラスパス内ターゲットクラスが見つからない場合は、独自のクラスロードパス内のターゲットクラスを検索してロードします。
+実際には、クラスをロードするための委任モデルがあります。特定のクラスをロードするとき、最初に親ローダーにターゲットクラスの検索を委託し、次に、上位の親ローダーが見つからない場合は読み込みを委託します。すべての親ローダーが独自のロードクラスパス内ターゲットクラスが見つからない場合は、独自のクラスロードパス内のターゲットクラスを検索してロードします。
 
 たとえば、Mathクラスは最初にロードするアプリケーションクラスローダーを見つけ、アプリケーションクラスローダーは最初に拡張クラスローダーにロードを委託し、次に拡張クラスローダーはブートクラスローダーに委託し、トップレベルのブートクラスローダーは独自のクラスロードパスを長時間検索し、Mathクラスが見つからなかった場合、Mathクラスをロードする要求に戻り、拡張クラスローダーは応答を受信した後に自身をロードします。独自のクラスで検索した後長い間パスをロードしていると、Mathクラスが見つかりません。アプリケーションクラスローダーへのMathクラスのロード要求に戻ると、アプリケーションクラスローダーは独自のクラスロードパスでMathクラスを探し、ロードします。それが見つかるとそれ自体。 
 
 一言で、委任モデルとは、先ずは親クラスローダーがロードする、失敗だったら、子クラスローダーがロードすることである。
 
-アプリケーションクラスローダーAppClassLoaderローディングクラスの親委任メカニズムのソースコードを見てみましょう。AppClassLoaderのloadClassメソッドは、最終的にその親クラスClassLoaderのloadClassメソッドを呼び出します。メソッドの一般的なロジックは次のとおりです。
+アプリケーションクラスローダーAppClassLoaderローディングクラスの委任モデルのソースコードを見てみましょう。AppClassLoaderのloadClassメソッドは、最終的にその親クラスClassLoaderのloadClassメソッドを呼び出します。メソッドの一般的なロジックは次のとおりです。
 
 1. まず、指定した名前のクラスがロードされているかどうかを確認します。ロードされている場合は、再度ロードして直接戻る必要はありません。
 
@@ -271,9 +271,9 @@ protected Class<?> loadClass(String name, boolean resolve)
 }
 ```
 
-**なぜ親委任メカニズムを設計するのですか？**
+**なぜ委任モデルを設計するのですか？**
 
-+ サンドボックスのセキュリティメカニズム：自分で作成したjava.lang.String.classは読み込まれないため、コアAPIライブラリが自由に改ざんされるのを防ぐことができます。
++ サンドボックスのセキュリティモデル：自分で作成したjava.lang.String.classは読み込まれないため、コアAPIライブラリが自由に改ざんされるのを防ぐことができます。
 
 + クラスの繰り返しロードを回避します。父親がすでにクラスをロードしている場合、ロードされたクラスの一意性を確保するために子ClassLoaderを再度ロードする必要はありません。
 
@@ -357,7 +357,7 @@ com.rocdocs.jvm.MyClassLoaderTest$MyClassLoader
 
 **委任モデルを破る**
 
-サンドボックスセキュリティメカニズムの別の例を見てみましょう。親委任メカニズムを解除し、カスタムクラスローダーを使用してjava.lang.String.classの独自の実装をロードしてみてください。
+サンドボックスセキュリティモデルの別の例を見てみましょう。委任モデルを解除し、カスタムクラスローダーを使用してjava.lang.String.classの独自の実装をロードしてみてください。
 
 ```java
 public class MyClassLoaderTest {
@@ -422,7 +422,7 @@ public class MyClassLoaderTest {
 
     public static void main(String args[]) throws Exception {
         MyClassLoader classLoader = new MyClassLoader("c:/workspace/test");
-        //自分でクラスロードメカニズムを書き直して、自分で作成したjava.lang.String.classをロードしてみてください
+        //自分でクラスロードモデルを書き直して、自分で作成したjava.lang.String.classをロードしてみてください
         Class clazz = classLoader.loadClass("java.lang.String");
         Object obj = clazz.newInstance();
         Method method= clazz.getDeclaredMethod("sout", null);
@@ -441,7 +441,7 @@ java.lang.SecurityException: Prohibited package name: java.lang
 
 **Tomcatのクラスローダーは委任モデルですか**
 
-例としてTomcatクラスのロードを取り上げます。Tomcatがデフォルトの親委任クラスのロードメカニズムを使用している場合、それは機能しますか？
+例としてTomcatクラスのロードを取り上げます。Tomcatがデフォルトの親委任クラスのロードモデルを使用している場合、それは機能しますか？
 
 考えてみましょう。TomcatはWebコンテナなので、どのような問題が解決しないといけないでしょうか。
 
@@ -457,7 +457,7 @@ java.lang.SecurityException: Prohibited package name: java.lang
 
 答えはいいえだ。 どうして？
 
-第１点は、デフォルトのクラスローダーメカニズムを使用する場合、同じクラスライブラリの2つの異なるバージョンをロードできないことです。デフォルトのクラス加算器は、バージョンに関係なく、完全修飾クラス名のみを考慮します。 1つだけです。
+第１点は、デフォルトのクラスローダーモデルを使用する場合、同じクラスライブラリの2つの異なるバージョンをロードできないことです。デフォルトのクラス加算器は、バージョンに関係なく、完全修飾クラス名のみを考慮します。 1つだけです。
 
 2番目は、デフォルトのクラスローダーが達成可能であるということです。これは、その責任が一意性を確保することであるためです。
 
@@ -487,7 +487,7 @@ WebAppClassLoaderは、SharedClassLoaderにロードされたクラスを使用�
 
 JasperLoaderのロード範囲は、このJSPファイルによってコンパイルされた.Classファイルのみです。その目的は破棄されます。WebコンテナがJSPファイルが変更されたことを検出すると、JasperLoaderの現在のインスタンスを置き換えます。ホットロードJSPファイルの機能は、新しいJspクラスローダーを作成することで実現されます。
 
-tomcatは、Javaが推奨する親委任モデルに違反していますか？ 答えは：違反です。
+tomcatは、Javaが推奨する委任モデルに違反していますか？ 答えは：違反です。
 
 明らかに、tomcatはこの方法で実装されていません。分離を実現するために、tomcatはこの規則に従いません。**各webappClassLoaderは、独自のディレクトリにクラスファイルをロードし、親クラスローダーに渡さないため、委任モデルが無効になります**。
 
@@ -595,7 +595,7 @@ com.rocdocs.jvm.MyClassLoaderTest$MyClassLoader@66d3c617
 
 原則：バックグラウンドの起動スレッドがjspファイルの変更を監視します。変更が見つかった場合、jspに対応するサーブレットクラスのローダー参照（gcroot）が見つかり、新しいJasperLoaderローダーが参照に割り当てられます。新しいjsp対応のサーブレットクラスがロードされますローダーはgcrootによって参照されないため、次のgcで破棄されます。
 
-Userクラスのコードを添付します。
+Userクラスのソースコードを添付します。
 
 ```java:User.java
 package com.rocdocs.jvm;
