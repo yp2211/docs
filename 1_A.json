@@ -1,0 +1,207 @@
+[{
+  "unit": 1,
+  "part": "A",
+  "kickoff":"20241207",
+  "words": [
+    {
+      "word": "appointment",
+      "pronunciation": "/əˈpɔɪntmənt/",
+      "english_definition": "an arrangement for a meeting at a given time and place",
+      "chinese_meaning": "约会；约定",
+      "example_sentence": {
+        "english": "If you would like to meet with Mr. Higgins, you must first make an appointment with his secretary.",
+        "chinese": "如果想见金斯先生，您得先跟他的秘书约好时间。"
+      }
+    },
+    {
+      "word": "attendance",
+      "pronunciation": "/əˈtɛndəns/",
+      "english_definition": "the act of being present; the number of persons present",
+      "chinese_meaning": "出席；出席人数",
+      "example_sentence": {
+        "english": "I was very pleased with the number of high-ranking officials in attendance at today’s press conference.",
+        "chinese": "我很高兴今天的新闻发布会有这么多高级官员到场。"
+      }
+    },
+    {
+      "word": "cabinet",
+      "pronunciation": "/ˈkæbɪnɪt/",
+      "english_definition": "an upright case or cupboard with shelves, drawers, or compartments for safekeeping or display of objects",
+      "chinese_meaning": "柜柜",
+      "example_sentence": {
+        "english": "He keeps all his files in the cabinets in the back of the office.",
+        "chinese": "他把所有文件都放在办公室后面的柜子里。"
+      }
+    },
+    {
+      "word": "calendar",
+      "pronunciation": "/ˈkælɪndər/",
+      "english_definition": "a chart showing the months of a year (including days and weeks); a schedule",
+      "chinese_meaning": "日历；月历；行事历",
+      "example_sentence": {
+        "english": "Please check the calendar on the wall and see which date Mother’s Day falls on this year.",
+        "chinese": "请查看墙上的日历，看看今年的母亲节是几号。"
+      }
+    },
+    {
+      "word": "clerk",
+      "pronunciation": "/klɜːrk/",
+      "english_definition": "a person who works in an office, bank, or law court and whose job is to look after records or accounts",
+      "chinese_meaning": "办事员；书记",
+      "example_sentence": {
+        "english": "She was offered a job as an accounts clerk with a travel firm.",
+        "chinese": "一家旅行社聘用她当会计。"
+      }
+    },
+    {
+      "word": "directory",
+      "pronunciation": "/dɪˈrektəri/",
+      "english_definition": "an alphabetical or classified list of names and addresses",
+      "chinese_meaning": "人名住址簿",
+      "example_sentence": {
+        "english": "If you need to speak to him, you can use the office directory and look up his personal extension.",
+        "chinese": "如果你需要跟他说话，你可以用办公室的名册查出他的分机号码。"
+      }
+    },
+    {
+      "word": "duplicate",
+      "pronunciation": "/ˈdjuːplɪkeɪt/",
+      "english_definition": "an identical copy",
+      "chinese_meaning": "副本；复制",
+      "example_sentence": {
+        "english": "Please don’t bring a duplicate, since I will need to see your original birth certificate for this passport.",
+        "chinese": "办理护照时，我需要看你的出生证明正本，所以不要带影印本。"
+      }
+    },
+    {
+      "word": "filing",
+      "pronunciation": "/ˈfaɪlɪŋ/",
+      "english_definition": "putting in useful order; cataloguing",
+      "chinese_meaning": "归档",
+      "example_sentence": {
+        "english": "Developed in the early 1900’s, the Dewey Decimal System is a filing system still used by libraries today.",
+        "chinese": "在20世纪初期发明的杜威十进制分类系统至今仍为许多图书馆所使用。"
+      }
+    },
+    {
+      "word": "in-tray",
+      "pronunciation": "/ˈɪnˌtreɪ/",
+      "english_definition": "a flat, shallow container used for holding items that are to be accomplished",
+      "chinese_meaning": "待处理文件盒",
+      "example_sentence": {
+        "english": "The more Dennis procrastinated, the more the stack of paperwork in his in-tray resembled the Rocky Mountains.",
+        "chinese": "丹尼斯越是拖延，他的“待处理文件盒”里的文件堆就越像落基山脉。"
+      }
+    },
+    {
+      "word": "monitor",
+      "pronunciation": "/ˈmɒnɪtər/",
+      "english_definition": "to watch, or keep track of, often by means of an electronic device",
+      "chinese_meaning": "检测；监视；追踪",
+      "example_sentence": {
+        "english": "Seismic readouts are carefully monitored by seismologists, who are always on the lookout for the next big earthquake.",
+        "chinese": "地震学家密切监控地震读数，以随时准备应对下一次大地震。"
+      }
+    },
+    {
+      "word": "out-tray",
+      "pronunciation": "/ˈaʊtˌtreɪ/",
+      "english_definition": "a tray or shallow basket used in offices to put letters and documents in when they have been dealt with",
+      "chinese_meaning": "已处理文件盒",
+      "example_sentence": {
+        "english": "I will leave that file in my out-tray on my desk, and you can come pick it up anytime in the afternoon.",
+        "chinese": "我会把那份文件放在桌上的“已处理文件盒”里，你可以在下午的任何时间来取。"
+      }
+    },
+    {
+      "word": "partition",
+      "pronunciation": "/pɑːrˈtɪʃən/",
+      "english_definition": "division into parts; something that separates or divides, as a wall",
+      "chinese_meaning": "分隔；分隔物",
+      "example_sentence": {
+        "english": "We don’t have the money to add an entirely new office, but what we can do is add a partition and divide one or two of the larger offices into multiple smaller ones.",
+        "chinese": "我们没有足够的钱建一间全新的办公室，但是我们可以用隔板将一两间较大的办公室分成较小的办公空间。"
+      }
+    },
+    {
+      "word": "postage",
+      "pronunciation": "/ˈpəʊstɪdʒ/",
+      "english_definition": "the charge for mailing an item",
+      "chinese_meaning": "邮费",
+      "example_sentence": {
+        "english": "How much postage is required for a small package to be sent to Hong Kong?",
+        "chinese": "寄一个小包裹到香港需要多少邮费？"
+      }
+    },
+    {
+      "word": "punctuality",
+      "pronunciation": "/ˌpʌŋktʃuˈæləti/",
+      "english_definition": "the quality or state of observing an appointed or regular time",
+      "chinese_meaning": "准时；守时",
+      "example_sentence": {
+        "english": "In addition to your dress and appearance, punctuality and a concise delivery are very important in a job interview.",
+        "chinese": "除了穿着和外貌外，准时和简洁的表达在求职面试中也非常重要。"
+      }
+    },
+    {
+      "word": "schedule",
+      "pronunciation": "/ˈskedʒuːl/",
+      "english_definition": "a plan that gives a list of events or tasks and the times at which each one should happen or be done",
+      "chinese_meaning": "时间表；计划表",
+      "example_sentence": {
+        "english": "The plane arrived in Cairo four minutes ahead of schedule.",
+        "chinese": "飞机比预定时间早了4分钟到达开罗。"
+      }
+    },
+    {
+      "word": "shift",
+      "pronunciation": "/ʃɪft/",
+      "english_definition": "a person’s scheduled period of work",
+      "chinese_meaning": "换班；轮班；值班",
+      "example_sentence": {
+        "english": "They often heard him complain about having to work the graveyard shift in order to pay the bills.",
+        "chinese": "他们经常听到他抱怨为了支付账单必须值夜班。"
+      }
+    },
+    {
+      "word": "staff",
+      "pronunciation": "/stæf/",
+      "english_definition": "the personnel of an enterprise",
+      "chinese_meaning": "全体职员",
+      "example_sentence": {
+        "english": "The staff at the five-star Formosa Hotel delivers prompt and friendly service.",
+        "chinese": "五星级福尔摩沙酒店的员工非常及时、周到。"
+      }
+    },
+    {
+      "word": "strike",
+      "pronunciation": "/straɪk/",
+      "english_definition": "a stoppage of work for a period of time by workers, usually in order to try to get better pay benefits or other conditions for themselves",
+      "chinese_meaning": "罢工",
+      "example_sentence": {
+        "english": "I’m glad that our employees were satisfied and didn’t find the need for a strike to express their concerns.",
+        "chinese": "我很高兴我们的员工都很满意，觉得没有必要罢工来表达他们的关切。"
+      }
+    },
+    {
+      "word": "task",
+      "pronunciation": "/tæsk/",
+      "english_definition": "a piece of assigned work",
+      "chinese_meaning": "任务；工作",
+      "example_sentence": {
+        "english": "This task must be made top priority because a very important client wants to pick up these papers today.",
+        "chinese": "这项任务被优先安排，因为有一个非常重要的客户今天要来取这些文件。"
+      }
+    },
+    {
+      "word": "workforce",
+      "pronunciation": "/ˈwɜːrkˌfɔːrs/",
+      "english_definition": "the total number of workers employed in a specific project; the total number of persons employed",
+      "chinese_meaning": "工作人员；劳动力",
+      "example_sentence": {
+        "english": "After months of unemployment, Tim joined the American workforce as the night manager at KFC.",
+        "chinese": "失业几个月后，提姆加入了美国劳动力队伍，开始在肯德基担任夜班经理。"
+      }
+    }
+  ]
+}]
